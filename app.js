@@ -69,6 +69,28 @@ app.post("/listings", async (req, res) => {
   res.redirect("/listings");
 });
 
+//Edit Route
+app.get("/listings/:id/edit", async (req, res) => {
+  let { id } = req.params;
+  let listing = await Listing.findById(id);
+  res.render("listings/edit.ejs", { listing });
+});
+
+//Update Route
+app.put("/listings/:id", async (req, res) => {
+  let { id } = req.params;
+  let { title, description, image, price, country, location } = req.body;
+  await Listing.findByIdAndUpdate(id, {
+    title,
+    description,
+    image,
+    price,
+    country,
+    location,
+  });
+  res.redirect(`/listings/${id}`);
+});
+
 app.listen(port, () => {
   console.log("app listening on port" + port);
 });
