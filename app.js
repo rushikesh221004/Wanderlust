@@ -3,7 +3,7 @@ const morgan = require("morgan");
 const methodOverride = require("method-override");
 const path = require("path");
 const mongoose = require("mongoose");
-const Listing = require("./models/listing.js")
+const Listing = require("./models/listing.js");
 
 const app = express();
 
@@ -36,24 +36,18 @@ app.get("/", (req, res) => {
   res.send("Hi i am root");
 });
 
+//Index Route
 app.get("/listings", async (req, res) => {
-    let allListings = await Listing.find()
-    res.render("listings/index.ejs", {allListings})
+  let allListings = await Listing.find();
+  res.render("listings/index.ejs", { allListings });
+});
+
+//Show Route
+app.get("/listings/:id", async (req, res) => {
+  let {id} = req.params
+  const listing = await Listing.findById(id)
+  res.render("listings/show.ejs", {listing})
 })
-
-// app.get("/testListing", async (req, res) => {
-//     let sampleListing = await new Listing({
-//         title: "My New Villa",
-//         description: "By the beach",
-//         price: 1200,
-//         location: "Calangute, Goa",
-//         country: "India"
-//     })
-
-//     await sampleListing.save()
-//     console.log("Sample was saved")
-//     res.send(sampleListing)
-// })
 
 app.listen(port, () => {
   console.log("app listening on port" + port);
