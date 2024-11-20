@@ -1,0 +1,86 @@
+.navbar {
+    background-color: white;
+}
+
+.fa-compass {
+    color: #FF385C;
+    font-size: 3rem;
+}
+
+.nav-link {
+    color: #222222 !important;
+}
+
+.nav-link:hover {
+    color: gray !important;
+}
+
+footer {
+    padding: 40px;
+    margin-top: 20px;
+    background-color: #F7F7F7;
+}
+
+footer a {
+    color: black;
+    text-decoration: none;
+}
+
+footer .wpl {
+   display: flex;
+   justify-content: center;
+}
+
+.f-info {
+    display: flex; 
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+
+}
+
+.f-info-socials {
+    /* background-color: yellow; */
+    display: flex; 
+    justify-content: center;
+    gap: 16px;
+}
+
+.f-info-socials i {
+    font-size: 22px;
+}
+
+.fa-square-facebook {
+    color: #1877F2;
+}
+
+.fa-square-instagram {
+    color: #d62976;
+}
+
+.fa-linkedin {
+    color: #0077B5;
+}
+
+.f-info-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+@media (min-width:768px) {
+    .f-info-socials i {
+        font-size: 26px;
+        transition: 0.2s;
+    }
+
+    .f-info-socials i:hover {
+        scale: 1.5;
+        rotate: -20deg;
+    }
+
+    footer a:hover {
+        text-decoration: line-through;
+        color: gray;
+    }
+}
