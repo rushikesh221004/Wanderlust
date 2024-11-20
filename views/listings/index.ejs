@@ -4,7 +4,9 @@
     <%for(let listing of allListings) {%>
     <a href="http://localhost:8080/listings/<%= listing._id %>">
       <div class="card" style="width: 18rem">
+        <i class="fa-regular fa-heart"></i>
         <img src="<%= listing.image %>" class="card-img-top" alt="image" />
+        <div class="card-img-overlay"></div>
         <div class="card-body">
           <p class="card-title">
             <%= listing.location %>, <%= listing.country %>
