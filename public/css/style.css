@@ -68,6 +68,42 @@ footer .wpl {
     gap: 10px;
 }
 
+.allCards {
+    /* background-color: yellow; */
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px; 
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.allCards a {
+    text-decoration: none;
+}
+
+.card-title {
+    font-weight: 600;
+}
+
+.card-text {
+    color: gray;
+}
+
+.card {
+    height: 300px;
+    width: 340px !important;
+    overflow: hidden;
+    border: none !important;
+}
+
+.card img {
+    height: 300px;
+    width: 100%;
+    border-radius: 5%;
+}
+
 @media (min-width:768px) {
     .f-info-socials i {
         font-size: 26px;
@@ -82,5 +118,40 @@ footer .wpl {
     footer a:hover {
         text-decoration: line-through;
         color: gray;
+    }
+
+    .allCards {
+        /* background-color: yellow; */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .card {
+        justify-self: center;
+        width: 90% !important;
+    }
+}
+
+@media (min-width: 1280px) {
+    .allCards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .card {
+        width: 80% !important;
+    }
+}
+
+@media (min-width: 1624px) {
+    .allCards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        padding: 70px;
+    }
+
+    .card {
+        width: 100% !important;
+        /* height: 300px !important; */
     }
 }
